@@ -16,7 +16,7 @@ Open the live demo for the app here:
 
 [View live demo](https://niteeshgowda72.github.io/Namma_Santhe_Ledger_app/)
 
-> The demo page is published via GitHub Pages from the repository root.
+> The demo page opens a browser-based app interface preview directly and includes the latest APK download link.
 
 ## Project Repository
 

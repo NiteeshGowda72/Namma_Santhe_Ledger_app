@@ -5,41 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Namma Santhe Ledger Demo</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f7f8fa; color: #111; }
-    .container { max-width: 900px; margin: auto; background: white; border-radius: 12px; padding: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
-    h1 { margin-top: 0; }
-    .card { background: #f4f6f9; padding: 18px; border-radius: 12px; margin: 18px 0; }
-    a { color: #0366d6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    pre { background: #eaeaea; padding: 12px; border-radius: 8px; overflow-x: auto; }
+    :root {
+      --bg: #eef2f7;
+      --surface: #ffffff;
+      --surface-strong: #f5f7fb;
+      --primary: #2563eb;
+      --text: #111827;
+      --muted: #5b6770;
+      --border: #d1d5db;
+      --shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+    .page { width: min(1200px, 100%); margin: 0 auto; padding: 24px; }
+    header { display: grid; gap: 18px; align-items: start; margin-bottom: 24px; }
+    header h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0; }
+    header p { margin: 0; color: var(--muted); max-width: 760px; }
+    .hero { display: grid; gap: 20px; grid-template-columns: 1.3fr 1fr; align-items: start; }
+    .hero-card { padding: 26px; border-radius: 24px; background: var(--surface); box-shadow: var(--shadow); border: 1px solid rgba(226,232,240,0.8); }
+    .hero-card h2 { margin-top: 0; font-size: 1.35rem; }
+    .hero-card p { color: var(--muted); line-height: 1.75; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px; color: white; background: var(--primary); text-decoration: none; font-weight: 600; box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18); }
+    .button.secondary { background: #0f172a; }
+    .mockphone { position: relative; width: 100%; max-width: 420px; margin: 0 auto; background: #0f172a; border-radius: 44px; padding: 20px; box-shadow: var(--shadow); }
+    .mockphone::before { content: ''; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 90px; height: 6px; background: rgba(255,255,255,.22); border-radius: 999px; }
+    .screen { width: 100%; min-height: 740px; background: linear-gradient(180deg, #eef2f7 0%, #ffffff 100%); border-radius: 34px; padding: 22px; display: grid; gap: 20px; }
+    .topbar { display: flex; justify-content: space-between; gap: 8px; align-items: center; background: white; border-radius: 22px; padding: 18px 20px; box-shadow: inset 0 1px 2px rgba(15,23,42,0.08); }
+    .topbar .title { font-weight: 700; font-size: 1.05rem; }
+    .badge { padding: 6px 12px; border-radius: 999px; font-size: 0.8rem; background: #e0efff; color: #1d4ed8; }
+    .balance { background: #dbeafe; border-radius: 26px; padding: 18px 20px; display: grid; gap: 8px; }
+    .balance strong { display: block; font-size: 1.5rem; }
+    .section { background: white; border-radius: 24px; padding: 18px 20px; box-shadow: inset 0 1px 2px rgba(15,23,42,0.06); }
+    .section h3 { margin: 0 0 12px 0; font-size: 1rem; color: #111827; }
+    .item { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #f3f4f6; }
+    .item:last-child { border-bottom: none; }
+    .item strong { color: #111827; }
+    .item span { color: #6b7280; }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .footer { display: grid; gap: 18px; margin-top: 24px; }
+    .footer-card { padding: 22px; border-radius: 24px; background: var(--surface); box-shadow: var(--shadow); border: 1px solid rgba(226,232,240,0.8); }
+    .footer-card h2 { margin-top: 0; }
+    .footer-card p { color: var(--muted); line-height: 1.7; }
+    .footer-card a { color: var(--primary); }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Namma Santhe Ledger</h1>
-    <p>This page is the live demo landing page for the Android app.</p>
-    <div class="card">
-      <h2>Demo</h2>
-      <p>This site shows the app overview and download links. It does not run the Android APK directly in the browser.</p>
-      <p>Install the APK on your Android device or emulator to try the app.</p>
+  <div class="page">
+    <header>
+      <div>
+        <h1>Namma Santhe Ledger</h1>
+        <p>Live demo page. Click the link to open a browser-based preview of the app interface instantly, and download the APK from the release page.</p>
+      </div>
+      <div>
+        <a class="button" href="https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/latest">Download APK</a>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-card">
+        <h2>App preview</h2>
+        <p>This page simulates the Namma Santhe Ledger app interface in the browser so users can open the app interface directly from the demo link.</p>
+        <p>Use the buttons below to jump to the interface or to install the APK on Android.</p>
+        <div style="display:flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+          <a class="button" href="#app-preview">Open App Interface</a>
+          <a class="button secondary" href="https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/latest">Download APK</a>
+        </div>
+      </div>
+
+      <div class="mockphone" id="app-preview">
+        <div class="screen">
+          <div class="topbar">
+            <div>
+              <div class="title">Namma Santhe Ledger</div>
+              <div style="color:#6b7280; font-size:0.9rem;">Jul 17, 2026</div>
+            </div>
+            <div class="badge">Active</div>
+          </div>
+          <div class="balance">
+            <div style="color:#2563eb;">Cash balance</div>
+            <strong>₹ 18,792</strong>
+            <div style="color:#475569;">Today’s total sales: ₹ 11,200</div>
+          </div>
+          <div class="section">
+            <h3>Quick actions</h3>
+            <div class="grid">
+              <div style="background:#eff6ff; border-radius:20px; padding:16px; text-align:center; font-weight:700;">Add Sale</div>
+              <div style="background:#fef3c7; border-radius:20px; padding:16px; text-align:center; font-weight:700;">Add Expense</div>
+              <div style="background:#dcfce7; border-radius:20px; padding:16px; text-align:center; font-weight:700;">Customers</div>
+            </div>
+          </div>
+          <div class="section">
+            <h3>Recent entries</h3>
+            <div class="item"><strong>Customer: Rao</strong><span>₹ 3,500</span></div>
+            <div class="item"><strong>Product sale</strong><span>₹ 7,200</span></div>
+            <div class="item"><strong>Expense</strong><span>₹ 1,100</span></div>
+          </div>
+          <div class="section" style="text-align:center;">
+            <div style="font-size:0.9rem; color:#475569;">Tap any card to view details in the full Android app.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <h2>Download</h2>
-      <p>Download the latest APK from the GitHub release page:</p>
-      <p><a href="https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/latest">Download APK</a></p>
-    </div>
-    <div class="card">
-      <h2>Project</h2>
-      <p>Source code on GitHub:</p>
-      <p><a href="https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app">https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app</a></p>
-    </div>
-    <div class="card">
-      <h2>How to use</h2>
-      <ol>
-        <li>Download the APK from the release asset link.</li>
-        <li>Enable app installs from unknown sources on your Android device/emulator.</li>
-        <li>Install the APK and open the app.</li>
-      </ol>
+
+    <div class="footer">
+      <div class="footer-card">
+        <h2>Live demo link</h2>
+        <p>Click the GitHub Pages demo link to open this browser-based app interface directly. The page is designed to show the app experience immediately.</p>
+      </div>
+      <div class="footer-card">
+        <h2>Install the app</h2>
+        <p>For the native Android app, download the APK from the release page and install it on your device or emulator.</p>
+        <p><a href="https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/latest">APK release</a></p>
+      </div>
+      <div class="footer-card">
+        <h2>Source code</h2>
+        <p>View the full Android project on GitHub.</p>
+        <p><a href="https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app">GitHub repository</a></p>
+      </div>
     </div>
   </div>
 </body>
