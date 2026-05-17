@@ -4,11 +4,11 @@ An Android ledger app for managing customers, transactions, and quick entries.
 
 ## Download APK
 
-Download the latest APK from the GitHub release asset:
+Download the latest APK from the GitHub release page:
 
-[Download APK](https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/download/v1.0.0/NammaSantheLedger-v1.0.0-debug.apk)
+[Download APK](https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/tag/v1.0.0)
 
-> This link will become available once the `v1.0.0` release is created and the release workflow finishes.
+> If the APK asset is not yet attached, use the release page to download the file once it becomes available.
 
 ## Live Demo
 
