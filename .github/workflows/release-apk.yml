@@ -36,21 +36,12 @@ jobs:
       - name: Build debug APK
         run: cd NammaSantheLedger && ./gradlew assembleDebug
 
-      - name: Create GitHub release
-        id: create_release
+      - name: Create GitHub release and upload APK
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
           body: "Release ${{ github.ref_name }}\n\nDebug APK build uploaded as release asset."
+          files: NammaSantheLedger/app/build/outputs/apk/debug/app-debug.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload APK asset
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: NammaSantheLedger/app/build/outputs/apk/debug/app-debug.apk
-          asset_name: NammaSantheLedger-${{ github.ref_name }}-debug.apk
-          asset_content_type: application/vnd.android.package-archive
-          token: ${{ secrets.GITHUB_TOKEN }}
