@@ -4,19 +4,19 @@ An Android ledger app for managing customers, transactions, and quick entries.
 
 ## Download APK
 
-Get the latest APK from the GitHub releases page:
+Download the latest APK from the GitHub release asset:
 
-[Download latest APK](https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/latest)
+[Download APK](https://github.com/NiteeshGowda72/Namma_Santhe_Ledger_app/releases/download/v1.0.0/NammaSantheLedger-v1.0.0-debug.apk)
 
-> If you want a direct APK file link, upload the APK to a release and replace the above URL with the exact download link.
+> This link will become available once the `v1.0.0` release is created and the release workflow finishes.
 
 ## Live Demo
 
 Open the live demo for the app here:
 
-[View live demo](https://your-live-demo-link.example.com)
+[View live demo](https://niteeshgowda72.github.io/Namma_Santhe_Ledger_app/)
 
-> Replace the demo URL above with your actual hosted demo link once it is available.
+> The live demo page is deployed via GitHub Pages and may take a few minutes to publish after the workflow runs.
 
 ## Project Repository
 
