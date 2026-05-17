@@ -14,9 +14,9 @@ Download the latest APK from the GitHub release page:
 
 Open the live demo for the app here:
 
-[View live demo](https://niteeshgowda72.github.io/Namma_Santhe_Ledger_app/)
+[View live demo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/NiteeshGowda72/Namma_Santhe_Ledger_app/gh-pages/index.html)
 
-> The demo page opens a browser-based app interface preview directly and includes the latest APK download link.
+> This link opens the browser-based app interface preview directly from the repository content.
 
 ## Project Repository
 
