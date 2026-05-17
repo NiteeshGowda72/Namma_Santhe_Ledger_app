@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 jobs:
   release:
@@ -19,6 +20,12 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 33
+          build-tools: 33.0.0
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
